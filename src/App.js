@@ -1,7 +1,10 @@
+import { Button } from "antd";
+
 function App() {
   return (
     <div className="App">
-      Marvel-Moba
+      <h1>Marvel-Moba</h1>
+      <Button type="primary">Button</Button>
     </div>
   );
 }

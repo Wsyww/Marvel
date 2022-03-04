@@ -1,9 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ConfigProvider } from 'antd';
+import zhCN from 'antd/es/locale/zh_CN';
 import App from './App';
+import '@/common/style/frame.less'
+
+const antdConfig = {
+  locale: zhCN
+}
 
 ReactDOM.render(
-  <App />,
+  <ConfigProvider {...antdConfig}>
+    <App />
+  </ConfigProvider>,
   document.getElementById('root')
 );
 
