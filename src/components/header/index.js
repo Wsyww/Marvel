@@ -1,12 +1,24 @@
+import { connect } from 'react-redux'
 import './header.less'
 
 function Header(props) {
 
-    const { title, info } = props
+    const { title, info, myLoginData } = props
 
     info && info()
 
-    return <div className='header-style'>Header:{ title }</div>
+    return (
+        <div className='header-style'>
+            Header:{ title }
+            <span style={{marginLeft: 20}}>myLoginData:{myLoginData}</span>
+        </div>
+    )
 }
 
-export default Header
+const mapStateToProps = (state) => {
+    return {
+        myLoginData: state.getIn(['login', 'myLoginData'])
+    }
+}
+
+export default connect(mapStateToProps)(Header)
